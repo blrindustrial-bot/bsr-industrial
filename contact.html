@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BLR INDUSTRIAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">INICIO</a>
+    <a href="about.html">SOBRE NOSOTROS</a>
+    <a href="services.html">SERVICIOS</a>
+    <a href="gallery.html">TRABAJOS REALIZADOS</a>
+</nav>
+
+<div class="contacto">
+    <h1>Contáctanos</h1>
+    <p>Complete sus datos y lo contactaremos lo antes posible.</p>
+
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Access Key de tu formulario Web3Forms -->
+        <input type="hidden" name="access_key" value="1327c17f-a05e-4043-9038-0276123cf0ae">
+
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Correo" required>
+        <input type="text" name="phone" placeholder="Teléfono" required>
+        <textarea name="message" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+
+<script>
+// Enviar mensaje a WhatsApp automáticamente
+document.querySelector("#contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nombre = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const telefono = document.querySelector('input[name="phone"]').value;
+    const mensaje = document.querySelector('textarea[name="message"]').value;
+
+    const texto = `📩 NUEVO CLIENTE INTERESADO
+👤 Nombre: ${nombre}
+📧 Correo: ${email}
+📱 Teléfono: ${telefono}
+📝 Mensaje: ${mensaje}
+
+💼 Enviado desde: BLR INDUSTRIAL – Sitio Web Oficial
+🌐 URL: https://bsr-industrial-xxxx.netlify.app`;
+
+    // Cambia el número de WhatsApp por tu número real
+    const url = "https://wa.me/18496517070?text=" + encodeURIComponent(texto);
+    window.open(url, "_blank");
+
+    // También deja que Web3Forms envíe a Gmail
+    this.submit();
+});
+</script>
+
+</body>
+</html>
