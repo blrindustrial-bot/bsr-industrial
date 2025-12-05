@@ -201,6 +201,11 @@ form button:hover {
     transition: background-color 0.3s;
 }
 
-.boton-cotizacion:hover {
-    background-color: #c46e00;
+.cotizacion {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+    max-width: 400px;    /* Tamaño máximo */
+    margin: 30px auto 0 auto; /* Margen superior igual al de otras tarjetas */
+    text-align: center;  /* Centrar el contenido */
 }
+
+
