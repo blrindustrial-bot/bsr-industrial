@@ -209,3 +209,29 @@ form button:hover {
 }
 
 
+/* Estilo normal del nav (escritorio) */
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+}
+
+/* Solo para móviles */
+@media (max-width: 768px) {
+    nav a {
+        display: inline-block;
+        background-color: #dd8622; /* color del cuadro */
+        padding: 10px 20px;
+        border-radius: 8px;
+        margin: 5px;
+        color: white;
+        text-align: center;
+        transition: background 0.3s;
+    }
+
+    nav a:hover {
+        background-color: #bb6d1a; /* efecto al pasar el mouse/touch */
+    }
+}
